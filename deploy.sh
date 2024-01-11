@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/pc17-dpl/travelroad_laravel
+cd /usr/share/nginx/travelroad_laravel
 sudo git add .
 sudo git commit -m "Changes done"
 sudo git push
