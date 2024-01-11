@@ -1,9 +1,9 @@
 #!/bin/bash
 
 cd /home/pc17-dpl/travelroad_laravel
-git add .
-git commit -m "Changes done"
-git push
+sudo git add .
+sudo git commit -m "Changes done"
+sudo git push
 
 ssh dimas@dimas.arkania.es "
   cd /home/dimas/travelroad_laravel
