@@ -9,7 +9,7 @@
 		<li>{{ $place->name }}</li>
 		@endforeach
 		</ul>
-		<a href='https://travelroad.laravel.dimas.arkania.es'>&lt;-Back home</a>
+		<a href='/'>&lt;-Back home</a>
 	</body>
 </html>
 

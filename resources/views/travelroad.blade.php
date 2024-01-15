@@ -4,9 +4,9 @@
   	</head>
   	<body>
     	<h1>My Travel Bucket List</h1>
-		<a href="https://travelroad.laravel.dimas.arkania.es/visited">Places I've Already Been To</a>
+		<a href="/visited">Places I've Already Been To</a>
 		<br>
-		<a href="https://travelroad.laravel.dimas.arkania.es/wished">Places I'd Like to Visit</a>
-		<p>Powered by Laravel &#128171;</p>
+		<a href="/wished">Places I'd Like to Visit</a>
+		<p>Powered by Laravel &#128171; Test clase</p>
 	</body>
 </html>
