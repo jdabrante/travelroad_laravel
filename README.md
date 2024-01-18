@@ -422,6 +422,88 @@ Para finalizar se podrá usar certbot para generar los certificados necesarios
 ```
 certbot --nginx
 ```
+##### Modificación del proyecto
+
+Para modificar este proyecto ha sido necesario configurar el fichero de web.php donde se gestionan las rutas
+```
+<?php
+
+// https://laravel.com/api/6.x/Illuminate/Support/Facades/DB.html
+use Illuminate\Support\Facades\DB;
+
+Route::get('/', function () {
+  $wished = DB::select('select * from places where visited = false');
+  $visited = DB::select('select * from places where visited = true');
+
+  return view('travelroad', ['wished' => $wished, 'visited' => $visited]);
+});
+
+Route::get('/visited', function () {
+	$visited = DB::select('select * from places where visited = true');
+	return view('visited', ['visited' => $visited]);
+});
+
+Route::get('/wished', function () {
+	$wished = DB::select('select * from places where visited = false');
+	return view('wished', ['wished' => $wished]);
+});
+```
+Esto nos permitirá definir las rutas y las variables que se pasarán a las vistas. Así pues, el último paso sería definir las nuevas vistas:
+
+- Visited:
+
+```
+<html>
+	<head>
+		<title>Visited Places List</title>
+	</head>
+	<body>
+		<h1>Places I've Already Been To</h1>
+		<ul>
+		@foreach ($visited as $place)
+		<li>{{ $place->name }}</li>
+		@endforeach
+		</ul>
+		<a href='/'>&lt;-Back home</a>
+	</body>
+</html>
+```
+
+- Wished:
+
+```
+<html>
+	<head>
+		<title>Wished Places List</title>
+	</head>
+	<body>
+		<h1>Places I'd Like to Visit</h1>
+		<ul>
+		@foreach ($wished as $place)
+		<li>{{ $place->name }}</li>
+		@endforeach
+		</ul>
+		<a href='/'>&lt;-Back home</a>
+	</body>
+</html>
+```
+
+- Index:
+
+```
+<html>
+ 	<head>
+    <title>Travel List</title>
+  	</head>
+  	<body>
+    	<h1>My Travel Bucket List</h1>
+		<a href="/visited">Places I've Already Been To</a>
+		<br>
+		<a href="/wished">Places I'd Like to Visit</a>
+		<p>Powered by Laravel &#128171; Test clase</p>
+	</body>
+</html>
+```
 
 PD: El ejecutable deploy.sh nos permite que una vez creado cambios en la máquina de desarrollo se suban los cambios direcatemente al gestor de proyectos Github y se bajen los cambios en el servidor de Producción.
 #### ***Conclusiones***. <a name="id5"></a>
