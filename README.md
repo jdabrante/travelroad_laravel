@@ -505,6 +505,25 @@ Esto nos permitirá definir las rutas y las variables que se pasarán a las vist
 </html>
 ```
 
+<center>
+
+<br>
+
+![image4](img/1l.png)
+
+<br>
+
+![image5](img/2l.png)
+
+<br>
+
+![image6](img/3l.png)
+
+<br>
+
+</center>
+
+
 PD: El ejecutable deploy.sh nos permite que una vez creado cambios en la máquina de desarrollo se suban los cambios direcatemente al gestor de proyectos Github y se bajen los cambios en el servidor de Producción.
 #### ***Conclusiones***. <a name="id5"></a>
 
