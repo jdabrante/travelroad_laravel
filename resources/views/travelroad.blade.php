@@ -7,6 +7,6 @@
 		<a href="/visited">Places I've Already Been To</a>
 		<br>
 		<a href="/wished">Places I'd Like to Visit</a>
-		<p>Powered by Laravel &#128171; Test clase</p>
+		<p>Powered by Laravel &#128171; ReTest clase</p>
 	</body>
 </html>
